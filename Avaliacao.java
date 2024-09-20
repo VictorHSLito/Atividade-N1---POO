@@ -1,50 +1,49 @@
+import java.util.Scanner;
+
 public class Avaliacao {
-    private double nota1Funcionario, nota2Funcionario, notafinalFuncionario;
+    private double[] notas = new double[3];
+    private double notaFinal = 0;
     private String data1Funcionario, data2Funcionario;
 
-    public Avaliacao(double nota1Funcionario, double nota2Funcionario, String data1Funcionario, String data2Funcionario) {
-        this.nota1Funcionario = nota1Funcionario;
-        this.nota2Funcionario = nota2Funcionario;
-        this.data1Funcionario = data1Funcionario;
-        this.data2Funcionario = data2Funcionario;
+    Scanner sc = new Scanner(System.in);
+
+    public Avaliacao() {
+        setNotas();
     }
 
-    public double getNota1Funcionario() {
-        return nota1Funcionario;
-    }
+    private void setNotas() {
+      for (int i = 0; i < 3; i++) {
+            boolean notaValida = false;
+            while (!notaValida) {
+                System.out.printf("Digite a nota %dª nota: ", i+1);
+                notas[i] = sc.nextDouble();
+                if (notas[i] < 0 || notas[i] > 10) {
+                    System.out.println("Nota inválida! Digite uma nota entre 0 e 10!");
 
-    public void setNota1Funcionario(double nota1Funcionario) {
-        this.nota1Funcionario = nota1Funcionario;
-    }
-
-    public double getNota2Funcionario() {
-        return nota2Funcionario;
-    }
-
-    public void setNota2Funcionario(double nota2Funcionario) {
-        this.nota2Funcionario = nota2Funcionario;
-    }
-
-    public double getNotafinalFuncionario() {
-        notafinalFuncionario = (nota1Funcionario + nota2Funcionario) / 2;
-
-        if (notafinalFuncionario <= 3) {
-            System.out.print("Nota Final: Ruim - ");
-            return notafinalFuncionario;
-        } else if (notafinalFuncionario <= 4) {
-            System.out.print("Nota Final: Regular - ");
-            return notafinalFuncionario;
-        } else if (notafinalFuncionario <= 7) {
-            System.out.print("Nota Final: Bom - ");
-            return notafinalFuncionario;
-        } else {
-            System.out.print("Nota Final: Excelente - ");
-            return notafinalFuncionario;
+                }
+                else {
+                    notaValida = true;
+                    notaFinal += notas[i];
+                }
+            }
         }
+        notaFinal = notaFinal/3;
     }
 
-    public void setNotafinalFuncionario(double notafinalFuncionario) {
-        this.notafinalFuncionario = notafinalFuncionario;
+    public void getNotafinal() {
+        if (notaFinal <= 3) {
+            System.out.printf("Nota Final: %.2f\nDesempenho final: Ruim!", notaFinal);
+
+        } else if (notaFinal <= 4) {
+            System.out.printf("Nota Final: %.2f\nDesempenho final: Regular!", notaFinal);
+
+        } else if (notaFinal <= 7) {
+            System.out.printf("Nota Final: %.2f\nDesempenho final: Bom!", notaFinal);
+
+        } else {
+            System.out.printf("Nota Final: %.2f\nDesempenho final: Excelente!", notaFinal);
+
+        }
     }
 
     public String getData1Funcionario() {
