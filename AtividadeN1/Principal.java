@@ -1,3 +1,4 @@
+package AtividadeN1;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -35,7 +36,7 @@ public class Principal {
         Funcionario[] funcionarios = new Funcionario[qnt];
         Avaliacao[] avaliacaos = new Avaliacao[qnt];
 
-        // Add dados na arrays criadasw
+        // Add dados na arrays criadas
         for (int i = 0; i < qnt; i++) {
 
             // Garantir que não tenha dados no fluxo de entrada
@@ -155,7 +156,7 @@ public class Principal {
                 }
             }
 
-            // Inicializa o Funcionario com o Construtor
+            // Inicializa o AtividadeN1.Funcionario com o Construtor
             funcionarios[i] = new Funcionario(nomeFuncionario, cargoFuncionario, salarioFuncionario);
             avaliacaos[i] = new Avaliacao(nota1Funcionario, nota2Funcionario, data1Funcionario, data2Funcionario);
         }

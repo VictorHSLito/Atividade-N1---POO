@@ -1,4 +1,4 @@
-import com.sun.management.UnixOperatingSystemMXBean;
+package AtividadeN1;
 
 import java.util.Scanner;
 
