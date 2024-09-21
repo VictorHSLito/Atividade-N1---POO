@@ -85,6 +85,7 @@ public class Funcionario {
             System.out.println("\nGostaria de mudar qual informação do funcionário?");
             System.out.println("1 - Nome\n2 - Cargo\n3 - Salário\n4 - Tudo");
             opc = sc.nextInt();
+            sc.nextLine(); // Limpa o buffer do scanner
             switch (opc) {
                 case 1:
                     System.out.println("Digite o novo nome abaixo: ");

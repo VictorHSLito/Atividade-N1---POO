@@ -55,6 +55,7 @@ public class Avaliacao {
         do {
             System.out.println("\nQual nota gostaria de ver?\n1 - 1ª Nota\n2 - 2ª Nota\n3 - 3ª Nota");
             opc = sc.nextInt();
+            sc.nextLine(); // Limpa o buffer do scanner
             switch (opc) {
                 case 1:
                     System.out.println("Nota 1: " + this.notas[0]);
@@ -77,6 +78,7 @@ public class Avaliacao {
         do {
             System.out.println("\nQual data gostaria de ver?\n1 - 1ª Data\n2 - 2ª Data\n3 - 3ª Data");
             opc = sc.nextInt();
+            sc.nextLine(); // Limpa o buffer do scanner
             switch (opc) {
                 case 1:
                     System.out.println("Data 1: " + this.datas[0]);
