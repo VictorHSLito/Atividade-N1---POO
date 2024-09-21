@@ -73,4 +73,9 @@ public class Funcionario {
             }
         }
     }
+
+    public void getAvaliacao() {
+        avaliacao.getNotas();
+//        avaliacao.getDatas();
+    }
 }

@@ -9,6 +9,7 @@ public class Avaliacao {
     private double[] notas = new double[3];
     private double notaFinal = 0;
     private String[] datas = new String[3];
+    private int opc;
 
     Scanner sc = new Scanner(System.in);
     DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -49,8 +50,41 @@ public class Avaliacao {
         }
     }
 
-    public String[] getDatas() {
-        return datas;
+    public void getNotas() {
+        System.out.println("\nQual nota gostaria de ver?\n1 - 1ª Nota\n2 - 2ª Nota\n3 - 3ª Nota");
+        opc = sc.nextInt();
+        switch (opc) {
+            case 1:
+                System.out.println("Nota 1: " + this.notas[0]);
+                break;
+            case 2:
+                System.out.println("Nota 2: " + this.notas[1]);
+                break;
+            case 3:
+                System.out.println("Nota 3: " + this.notas[2]);
+                break;
+            default:
+                System.out.println("Não foi selecionada uma opção válida!");
+                break;
+        }
+    }
+    public void getDatas() {
+        System.out.println("\nQual data gostaria de ver?\n1 - 1ª Data\n2 - 2ª Data\n3 - 3ª Data");
+        opc = sc.nextInt();
+        switch (opc) {
+            case 1:
+                System.out.println("Data 1: " + this.datas[0]);
+                break;
+            case 2:
+                System.out.println("Data 2: " + this.datas[1]);
+                break;
+            case 3:
+                System.out.println("Data 3: " + this.datas[2]);
+                break;
+            default:
+                System.out.println("Não foi selecionada uma opção válida!");
+                break;
+        }
     }
 
     public void setDatas(String[] datas) {
@@ -60,7 +94,7 @@ public class Avaliacao {
     }
 
     private String lerData(int index) {
-        System.out.printf("Digite a data da avaliação do %dº trimestre", index);
+        System.out.printf("Digite a data da avaliação do %dº trimestre: ", index);
 
         while (true) {
             String dataEntrada = sc.nextLine();
