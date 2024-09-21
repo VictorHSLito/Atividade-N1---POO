@@ -76,6 +76,39 @@ public class Funcionario {
 
     public void getAvaliacao() {
         avaliacao.getNotas();
-//        avaliacao.getDatas();
+        avaliacao.getDatas();
+    }
+
+    public void mudarInformacoes() {
+        int opc;
+        do {
+            System.out.println("\nGostaria de mudar qual informação do funcionário?");
+            System.out.println("1 - Nome\n2 - Cargo\n3 - Salário\n4 - Tudo");
+            opc = sc.nextInt();
+            switch (opc) {
+                case 1:
+                    System.out.println("Digite o novo nome abaixo: ");
+                    setNome();
+                    break;
+                case 2:
+                    System.out.println("Digite o novo cargo abaixo: ");
+                    setCargo();
+                    break;
+                case 3:
+                    System.out.println("Digite o novo salário abaixo: ");
+                    setSalario();
+                    break;
+                case 4:
+                    System.out.println("Digite as novas informações do funcionário abaixo: ");
+                    setNome();
+                    setCargo();
+                    setSalario();
+                    this.avaliacao = new Avaliacao();
+                    break;
+                default:
+                    System.out.println("Não foi selecionada uma opção válida!");
+                    break;
+            }
+        } while (opc < 1 || opc > 4);
     }
 }
